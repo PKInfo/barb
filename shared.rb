@@ -121,6 +121,9 @@ def bc_gl_code
 		@gl_code = "422"
 	end
 	
+	puts "[EVENT_YEAR] #{@event_year}"
+	puts "[EVENT_ABBR] #{@event_abbr}"
+
 	@invoice = "BCOMP#{@event_abbr}#{short_year(@event_year)}"
 end
 
