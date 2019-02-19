@@ -106,6 +106,14 @@ class PaymentProcessor < Sinatra::Application
 		@processType = "Payment"
 		@json = JSON.parse(request.body.read).symbolize_keys unless params[:path]
 
+		if @json[:event_year]
+			@event_year = @json[:event_year]
+		end
+
+		if @json[:event_abbr]
+			@event_abbr = @json[:event_abbr]
+		end
+		
 		process_payment_logic
 
 		# Return the response back to the requesting application.
