@@ -101,11 +101,11 @@ def process_payment_logic
 		if @result == "OK"
 			@status_code = 200
 			@status_message = "[OK] PaymentProcessed"
-			@return_json_package = JSON.generate ["authorize_response"=>@authorize_response,"result"=>@result,"status_code"=>@status_code,"status_message"=>@status_message,"authorize_response_kind"=>@authorize_response_kind,"transaction_id"=>@transaction_id,"authorization_code"=>@authorization_code][0]
+			@return_json_package = JSON.generate ["avs_code"=>@avs_code,"cvv_code"=>@cvv_code,"authorize_response"=>@authorize_response,"result"=>@result,"status_code"=>@status_code,"status_message"=>@status_message,"authorize_response_kind"=>@authorize_response_kind,"transaction_id"=>@transaction_id,"authorize_response_code"=>@authorize_response_code,"authorize_response_message"=>@authorize_response_message,"authorization_code"=>@authorization_code][0]
 		elsif @result == "ERROR"
 			@status_code = 191
 			@status_message = "[ERROR] PaymentNotProcessed"
-			@return_json_package = JSON.generate ["authorize_response"=>@authorize_response,"result"=>@result,"status_code"=>@status_code,"status_message"=>@status_message,"authorize_response_kind"=>@authorize_response_kind,"transaction_id"=>@transaction_id,"authorize_response_code"=>@authorize_response_code,"authorize_response_message"=>@authorize_response_message][0]
+			@return_json_package = JSON.generate ["avs_code"=>@avs_code,"cvv_code"=>@cvv_code,"authorize_response"=>@authorize_response,"result"=>@result,"status_code"=>@status_code,"status_message"=>@status_message,"authorize_response_kind"=>@authorize_response_kind,"transaction_id"=>@transaction_id,"authorize_response_code"=>@authorize_response_code,"authorize_response_message"=>@authorize_response_message][0]
 		end
 
 	else
