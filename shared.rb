@@ -99,6 +99,12 @@ def ptd_gl_code
 	# October is when the GL Code swithces to 424.
 	month_ptd = 9
 
+	# From Angela on Slack on 09/26/19
+	# PTD19 coding should stay the same.
+	# PTD20 should be 242.  And yes, 242 is correct until December 31, On January 1 it should then go to 241.  The new codes are a change in the Finance process, that I didn't have changed halfway through 2019, and am now using this opportunity to change/correct it.  
+	# If it is too much to change/fix, October 1 is a few days away and I can just continue running a daily analysis and break out the '19 from the '20.  But I do need the actual codes to change to 241 and 242.
+
+	# This logic will only apply through 2020. We need to fix this so that we dont have to update it each year.
 	if (year == 2019 ) 
 		@gl_code = "242"
 		@invoice = "PTD#{short_year(nextyear)}"
