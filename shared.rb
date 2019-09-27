@@ -97,15 +97,23 @@ def ptd_gl_code
 	nextyear = year + 1
 
 	# October is when the GL Code swithces to 424.
-	month_ptd = 10
+	month_ptd = 9
 
-	if (month >= month_ptd)
-		@gl_code = "424"
+	if (year == 2019 ) 
+		@gl_code = "242"
 		@invoice = "PTD#{short_year(nextyear)}"
-	else
-		@gl_code = "423"
+	elsif (year == 2020)
+		@gl_code = "241"
 		@invoice = "PTD#{short_year(year)}"
 	end
+
+	# if (month >= month_ptd)
+	# 	@gl_code = "424"
+	# 	@invoice = "PTD#{short_year(nextyear)}"
+	# else
+	# 	@gl_code = "423"
+	# 	@invoice = "PTD#{short_year(year)}"
+	# end
 
 end
 
